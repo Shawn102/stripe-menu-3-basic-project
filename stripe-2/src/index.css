@@ -1,0 +1,274 @@
+@import url("https://fonts.googleapis.com/css2?family=McLaren&family=Quintessential&display=swap");
+*{
+  margin: 0%;
+  box-sizing: border-box;
+}
+:root{
+  --font-Quintessential: "Quintessential";
+  --font-McLaren: "McLaren";
+  --smooth-transition: all 0.3s ease;
+  --long-transition: all 0.4s ease;
+  --color-gold: goldenrod;
+}
+nav{
+  padding: 10px 68px 10px 30px;
+}
+.nav-header{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.fa-bars-btn{
+  display: flex;
+  align-items: center;
+  font-size: 20px;
+  border: none;
+  color: var(--color-gold);
+  background: rgb(0, 0, 0);
+  border-radius: 5px;
+  padding: 5px 7px;
+  box-shadow: 0 0 3px 2px rgb(223, 156, 12);
+  cursor: pointer;
+  z-index: 10;
+}
+.ul{
+  display: none;
+}
+.btn-sign-in{
+  display: none;
+}
+/* Sidebar style */
+.sidebar{
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  background: rgba(12, 12, 12, 0.5);
+  top: 0;
+  left: 0;
+  display: grid;
+  place-items: center;
+  transform: scale(0);
+  visibility: hidden;
+  z-index: 2;
+  transition: var(--smooth-transition);
+}
+.show-sidebar{
+  visibility: visible;
+  transform: scale(1);
+}
+.sidebar-box{
+  position: relative;
+  width: 90vw;
+  max-width: 400px;
+  height: 80vh;
+  max-height: 600px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px 3px rgb(80, 80, 80);
+  background: white;
+  padding: 50px 10px 5px 30px;
+}
+.close-sidebar-btn{
+  position: absolute;
+  right: 20px;
+  top: 20px;
+  display: flex;
+  font-size: 20px;
+  background: transparent;
+  border: none;
+  color: var(--color-gold);
+  cursor: pointer;
+}
+.h4-sidebar{
+  color: rgb(135, 135, 247);
+  text-transform: capitalize;
+  font-family: var(--font-McLaren);
+}
+.sidebar-inside{
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-gap: 0.4rem;
+  padding: 10px 0;
+}
+.sidebar-inside .a1{
+  display: flex;
+  align-items: center;
+  margin: 5px 0;
+  color: var(--color-gold);
+  text-decoration: none;
+  text-transform: capitalize;
+  transition: var(--smooth-transition);
+}
+.a1:hover{
+  color: rgb(67, 160, 129);
+}
+.a1 svg{
+  margin-right: 5px;
+}
+/* Hero style */
+.hero::before{
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 65vh;
+  background: url(./images/hero.svg);
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  display: grid;
+  justify-items: center;
+  z-index: -1;
+}
+.hero{
+  position: relative;
+  margin-top: -4.5rem;
+  display: grid;
+  min-height: 80vh;
+  align-items: center;
+  /* z-index: -1; */
+}
+.hero-grid-area{
+  display: grid;
+  grid-template-columns: repeat(1, auto);
+  grid-gap: 4rem;
+  margin-top: 100px;
+  padding: 0 67px 0 40px;
+}
+.hero-section-1{
+  padding: 40px 0;
+}
+.hero-section-2{
+  display: none;
+}
+.hero-image{
+  width: 220px;
+}
+.h1-text{
+  font-size: 25px;
+  font-family: var(--font-McLaren);
+}
+.p-hero-text{
+  padding: 20px 0;
+  font-family: var(--font-McLaren);
+  color: rgb(32, 187, 207);
+}
+.start-now-btn{
+  border: none;
+  background: black;
+  cursor: pointer;
+  color: whitesmoke;
+  border-radius: 5px;
+  padding: 3px 10px;
+}
+.submenu{
+  position: absolute;
+  background: white;
+  top: 4rem;
+  left: 50%;
+  padding: 20px;
+  border-radius: 5px;
+  transform: translateX(-50%);
+  visibility: hidden;
+  /* display: none; */
+  box-shadow: 0 0 4px 2px #444444;
+  transition: var(--long-transition);
+}
+.show-submenu{
+  visibility: visible;
+  /* display: block; */
+}
+/* This for creating the white angle sign at the submenu top side */
+.submenu::before{
+  content: '';
+  width: 0;
+  height: 0;
+  position: absolute;
+  top: -10px;
+  left: 50%;
+  border-left: 10px solid transparent;
+  border-right: 10px solid transparent;
+  border-bottom: 10px solid white;
+  transform: translateX(-50%);
+}
+.submenu-h1{
+  color: rgb(58, 196, 150);
+  text-transform: capitalize;
+  font-family: var(--font-McLaren);
+}
+.submenu-center{
+  display: grid;
+  grid-gap: 0.25rem 1rem;
+}
+.col-2{
+  grid-template-columns: repeat(2, 1fr);
+}
+.col-3{
+  grid-template-columns: repeat(3, 2fr);
+}
+.col-4{
+  grid-template-columns: repeat(4, 2fr);
+}
+.submenu-center .sub-a{
+  width: 7rem;
+  text-decoration: none;
+  text-transform: capitalize;
+  color: var(--color-gold);
+  padding: 15px 0;
+  display: flex;
+  justify-content: center;
+}
+.sub-a svg {
+  margin-right: 5px;
+}
+@media screen and (min-width: 768px) {
+  nav{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .fa-bars-btn{
+    display: none;
+  }
+  .ul{
+    display: flex;
+    list-style: none;
+  }
+  .ul .li{
+    margin: 0 20px;
+    z-index: 10;
+  }
+  .btn-all{
+    text-transform: capitalize;
+    background: transparent;
+    font-family: var(--font-McLaren);
+    color: white;
+    border: none;
+    font-size: 20px;
+    cursor: pointer;
+  }
+  .btn-sign-in{
+    display: block;
+    border: none;
+    border-radius: 10px;
+    padding: 5px 10px;
+    color: white;
+    background: black;
+    cursor: pointer;
+  }
+  /* sidebar style */
+  .sidebar{
+    display: none;
+  }
+  /* Hero style */
+  .hero-grid-area{
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .hero-section-2{
+    display: block;
+    margin-left: 100px;
+  }
+  .h1-text{
+    font-size: 45px;
+  }
+}
